@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "game-library"
+version = "0.1.0"
+description = "A game library, which can be viewed with a browser."
+authors = ["Martin Leuthold <24938292+mleuthold@users.noreply.github.com>"]
+license = "GNU General Public License v3.0"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+loguru = "^0.5.3"
+click = "^8.0.3"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

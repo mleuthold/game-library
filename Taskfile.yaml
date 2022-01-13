@@ -1,0 +1,28 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+
+  create-requirements-file:
+    desc: Create a requirements.txt file.
+    cmds:
+      - poetry export -f requirements.txt --output requirements.txt --without-hashes
+
+  run-docker-container:
+    desc: Run a Docker container.
+    cmds:
+      - docker run --rm -it -v `pwd`:/work -w /work python:3.10 bash
+
+  build-docker-image:
+    desc: Build a Docker image.
+    cmds:
+      - docker build -t game-library .
+
